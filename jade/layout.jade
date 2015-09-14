@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(
+      name="viewport"
+      content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"
+    )
+    title= pageTitle
+
+    block css
+      link(href='./css/3p.css', rel='stylesheet')
+      link(href='./css/style.css', rel='stylesheet')
+
+  body(ng-app='parallax/ui' ng-controller='FrameController')
+    block body
+      Body place
+
+block script
+  script(src='./js/3p.js')
+  script(src='./js/ui.js')
