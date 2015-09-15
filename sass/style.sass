@@ -1,2 +1,72 @@
 body
-  background: green
+  background: white
+
+img
+  max-width: 100%
+
+.row
+  display: flex
+  lex-flow: column wrap
+  justify-content: center
+  align-items: stretch
+
+.bird-box
+  position: relative
+  height: 600px
+  background:
+    image: url(/images/bird-bg.jpg)
+    size: auto 600px
+    position: top center
+    attachment: fixed
+  overflow: hidden
+
+  .logo
+    height: 100px
+    width: 100%
+    background:
+      image: url(/images/black-bird-logo.svg)
+      position: center
+      repeat: no-repeat
+    position: absolute
+    top: 50%
+    margin:
+      top: -50px
+
+  .fore-bird
+    width: 960px
+    height: 733px
+    background:
+      // color: transparentize(pink, 0.4)
+      image: url(/images/fore-bird.png)
+      repeat: no-repeat
+      position: right bottom
+    position: absolute
+    left: 50%
+    margin:
+      left: -480px
+    top: 380px
+
+  .back-bird
+    width: 960px
+    height: 298px
+    background:
+      // color: transparentize(pink, 0.4)
+      image: url(/images/back-bird.png)
+      repeat: no-repeat
+      position: top left
+    position: absolute
+    left: 50%
+    margin:
+      left: -480px
+
+.clothes-pics
+  figure
+    margin: 0.5em;
+    position: relative
+    opacity: 0
+    transform: translateX(20px)
+    transition: all 0.3s ease-in-out
+
+    &.is-showing
+      opacity: 1
+      transform: translateX(0px)

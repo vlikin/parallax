@@ -31,12 +31,13 @@ gulp.task('ui', function() {
 
 gulp.task('compile_3pjs', function () {
   gulp.src([
+      './bower_components/jquery/dist/jquery.js',
       './bower_components/angular/angular.js',
       './bower_components/angular-animate/angular-animate.js'
     ])
     .pipe(plumber())
     .pipe(concat('3p.js'))
-    .pipe(uglify())
+    //  .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./www/js/'))
     .pipe(reload({stream: true}));
