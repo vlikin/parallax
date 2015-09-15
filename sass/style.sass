@@ -60,13 +60,54 @@ img
       left: -480px
 
 .clothes-pics
+  margin:
+    bottom: 200px;
+
   figure
+    overflow: hidden
     margin: 0.5em;
     position: relative
     opacity: 0
     transform: translateX(20px)
     transition: all 0.3s ease-in-out
+    cursor: pointer
+
+    img
+      display: block
+      transform: scale(1)
+      transition: all 0.3s ease-in-out
 
     &.is-showing
       opacity: 1
       transform: translateX(0px)
+
+    &:hover
+      figcaption
+        left: 0
+
+      img
+        transform: scale(1.2)
+
+  figcaption
+    background: black
+    color: white
+    position: absolute
+    bottom: 10px;
+    left: -100%;
+    padding: 2px 8px
+    font-size: 11px
+    transition: all 0.3s ease-in-out
+
+.large-window
+  height: 640px
+  width: 640px
+  margin: auto
+  background:
+    image: url(/images/model1.jpg)
+    position: top center
+    repeat: no-repeat
+    attachment: fixed
+  margin:
+    top: 100px
+  border:
+    radius: 100%

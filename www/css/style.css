@@ -47,12 +47,44 @@ img {
     left: 50%;
     margin-left: -480px; }
 
-.clothes-pics figure {
-  margin: 0.5em;
-  position: relative;
-  opacity: 0;
-  transform: translateX(20px);
-  transition: all 0.3s ease-in-out; }
-  .clothes-pics figure.is-showing {
-    opacity: 1;
-    transform: translateX(0px); }
+.clothes-pics {
+  margin-bottom: 200px; }
+  .clothes-pics figure {
+    overflow: hidden;
+    margin: 0.5em;
+    position: relative;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer; }
+    .clothes-pics figure img {
+      display: block;
+      transform: scale(1);
+      transition: all 0.3s ease-in-out; }
+    .clothes-pics figure.is-showing {
+      opacity: 1;
+      transform: translateX(0px); }
+    .clothes-pics figure:hover figcaption {
+      left: 0; }
+    .clothes-pics figure:hover img {
+      transform: scale(1.2); }
+  .clothes-pics figcaption {
+    background: black;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    left: -100%;
+    padding: 2px 8px;
+    font-size: 11px;
+    transition: all 0.3s ease-in-out; }
+
+.large-window {
+  height: 640px;
+  width: 640px;
+  margin: auto;
+  background-image: url(/images/model1.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-top: 100px;
+  border-radius: 100%; }
