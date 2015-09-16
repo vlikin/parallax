@@ -47,44 +47,104 @@ img {
     left: 50%;
     margin-left: -480px; }
 
-.clothes-pics {
-  margin-bottom: 200px; }
-  .clothes-pics figure {
-    overflow: hidden;
-    margin: 0.5em;
-    position: relative;
-    opacity: 0;
-    transform: translateX(20px);
-    transition: all 0.3s ease-in-out;
-    cursor: pointer; }
-    .clothes-pics figure img {
-      display: block;
-      transform: scale(1);
+.content {
+  position: relative;
+  z-index: 2;
+  background: white;
+  margin-bottom: 400px; }
+  .content .clothes-pics {
+    margin-bottom: 200px; }
+    .content .clothes-pics figure {
+      overflow: hidden;
+      margin: 0.5em;
+      position: relative;
+      opacity: 0;
+      transform: translateX(20px);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer; }
+      .content .clothes-pics figure img {
+        display: block;
+        transform: scale(1);
+        transition: all 0.3s ease-in-out; }
+      .content .clothes-pics figure.is-showing {
+        opacity: 1;
+        transform: translateX(0px); }
+      .content .clothes-pics figure:hover figcaption {
+        left: 0; }
+      .content .clothes-pics figure:hover img {
+        transform: scale(1.2); }
+    .content .clothes-pics figcaption {
+      background: black;
+      color: white;
+      position: absolute;
+      bottom: 10px;
+      left: -100%;
+      padding: 2px 8px;
+      font-size: 11px;
       transition: all 0.3s ease-in-out; }
-    .clothes-pics figure.is-showing {
-      opacity: 1;
-      transform: translateX(0px); }
-    .clothes-pics figure:hover figcaption {
-      left: 0; }
-    .clothes-pics figure:hover img {
-      transform: scale(1.2); }
-  .clothes-pics figcaption {
-    background: black;
-    color: white;
-    position: absolute;
-    bottom: 10px;
-    left: -100%;
-    padding: 2px 8px;
-    font-size: 11px;
-    transition: all 0.3s ease-in-out; }
+  .content .large-window {
+    height: 640px;
+    width: 640px;
+    margin: auto;
+    position: relative;
+    background-image: url(/images/model2.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: 100px;
+    border-radius: 100%; }
+    .content .large-window .window-tint {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      height: 640px;
+      width: 100%; }
+      .content .large-window .window-tint .promo-text {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 50px;
+        font-weight: 100;
+        margin-top: -70px;
+        opacity: 0; }
+        .content .large-window .window-tint .promo-text strong {
+          display: block;
+          font-size: 30px; }
+        .content .large-window .window-tint .promo-text span {
+          font-weight: 300;
+          font-size: 18px;
+          font-style: italic;
+          color: rgba(255, 255, 255, 0.6); }
+        .content .large-window .window-tint .promo-text .window-cta {
+          font-size: 20px;
+          text-decoration: none;
+          color: white;
+          border: 1px solid white;
+          padding: 5px 20px; }
+          .content .large-window .window-tint .promo-text .window-cta:hover {
+            background: white;
+            color: black;
+            transition: all 0.3s ease-in-out; }
+  .content .blog-posts {
+    margin-top: 100px;
+    position: relative; }
+    .content .blog-posts .post {
+      border: 1px solid #e1e1e1;
+      padding: 20px 20px 0; }
+    .content .blog-posts .post-1 {
+      transform: translate(-100px, 20px); }
+    .content .blog-posts .post-2 {
+      z-index: 2; }
+    .content .blog-posts .post-3 {
+      transform: translate(-100px, 20px); }
 
-.large-window {
-  height: 640px;
-  width: 640px;
-  margin: auto;
-  background-image: url(/images/model1.jpg);
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  margin-top: 100px;
-  border-radius: 100%; }
+footer {
+  background: black;
+  color: white;
+  padding: 40px;
+  position: fixed;
+  bottom: 0;
+  width: 100%; }
+  footer a {
+    color: white; }

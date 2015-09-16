@@ -59,55 +59,132 @@ img
     margin:
       left: -480px
 
-.clothes-pics
+.content
+  position: relative
+  z-index: 2
+  background: white
   margin:
-    bottom: 200px;
+    bottom: 400px
 
-  figure
-    overflow: hidden
-    margin: 0.5em;
-    position: relative
-    opacity: 0
-    transform: translateX(20px)
-    transition: all 0.3s ease-in-out
-    cursor: pointer
+  .clothes-pics
+    margin:
+      bottom: 200px;
 
-    img
-      display: block
-      transform: scale(1)
+    figure
+      overflow: hidden
+      margin: 0.5em;
+      position: relative
+      opacity: 0
+      transform: translateX(20px)
       transition: all 0.3s ease-in-out
-
-    &.is-showing
-      opacity: 1
-      transform: translateX(0px)
-
-    &:hover
-      figcaption
-        left: 0
+      cursor: pointer
 
       img
-        transform: scale(1.2)
+        display: block
+        transform: scale(1)
+        transition: all 0.3s ease-in-out
 
-  figcaption
-    background: black
+      &.is-showing
+        opacity: 1
+        transform: translateX(0px)
+
+      &:hover
+        figcaption
+          left: 0
+
+        img
+          transform: scale(1.2)
+
+    figcaption
+      background: black
+      color: white
+      position: absolute
+      bottom: 10px;
+      left: -100%;
+      padding: 2px 8px
+      font-size: 11px
+      transition: all 0.3s ease-in-out
+
+  .large-window
+    height: 640px
+    width: 640px
+    margin: auto
+    position: relative
+    background:
+      image: url(/images/model2.jpg)
+      position: top center
+      repeat: no-repeat
+      attachment: fixed
+    margin:
+      top: 100px
+    border:
+      radius: 100%
+
+    .window-tint
+      background-color: rgba(0, 0, 0, 0.5)
+      border-radius: 50%
+      height: 640px;
+      width: 100%;
+
+      .promo-text
+        position: absolute
+        top: 50%
+        width: 100%
+        text-align: center
+        color: white
+        font-size: 50px
+        font-weight: 100
+        margin-top: -70px
+        opacity: 0
+
+        strong
+          display: block
+          font-size: 30px
+
+        span
+          font:
+            weight: 300
+            size: 18px
+            style: italic
+          color: rgba(255, 255, 255, 0.6)
+
+        .window-cta
+          font-size: 20px
+          text-decoration: none
+          color: white
+          border: 1px solid white
+          padding: 5px 20px
+
+          &:hover
+            background: white
+            color: black
+            transition: all 0.3s ease-in-out
+
+  .blog-posts
+    margin-top: 100px
+    position: relative
+
+    .post
+      border: 1px solid #e1e1e1
+      padding: 20px 20px 0
+
+    .post-1
+      transform: translate(-100px, 20px)
+
+    .post-2
+      z-index: 2
+
+
+    .post-3
+      transform: translate(-100px, 20px)
+
+footer
+  background: black
+  color: white
+  padding: 40px
+  position: fixed;
+  bottom: 0
+  width: 100%
+
+  a
     color: white
-    position: absolute
-    bottom: 10px;
-    left: -100%;
-    padding: 2px 8px
-    font-size: 11px
-    transition: all 0.3s ease-in-out
-
-.large-window
-  height: 640px
-  width: 640px
-  margin: auto
-  background:
-    image: url(/images/model1.jpg)
-    position: top center
-    repeat: no-repeat
-    attachment: fixed
-  margin:
-    top: 100px
-  border:
-    radius: 100%
