@@ -1,27 +1,82 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  font-size: 18px;
+  font-family: 'Play', sans-serif; }
+
 body {
   background: white; }
+
+h1 {
+  font-size: 2em;
+  font-weight: bold; }
+
+h5 {
+  font-size: 1.3em;
+  font-weight: bold; }
+
+p {
+  text-align: justify;
+  padding: 0.5em; }
 
 img {
   max-width: 100%; }
 
+a {
+  color: grey;
+  text-decoration: none; }
+  a:hover {
+    color: red; }
+
 .row {
   display: flex;
-  lex-flow: column wrap;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: stretch; }
 
 .bird-box {
   position: relative;
   height: 600px;
-  background-image: url(../images/bird-bg.jpg);
+  background-image: url(/images/bird-bg.jpg);
   background-size: auto 600px;
   background-position: top center;
   background-attachment: fixed;
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: 2; }
   .bird-box .logo {
     height: 100px;
     width: 100%;
-    background-image: url(../images/black-bird-logo.svg);
+    background-image: url(/images/black-bird-logo.svg);
     background-position: center;
     background-repeat: no-repeat;
     position: absolute;
@@ -30,7 +85,7 @@ img {
   .bird-box .fore-bird {
     width: 960px;
     height: 733px;
-    background-image: url(../images/fore-bird.png);
+    background-image: url(/images/fore-bird.png);
     background-repeat: no-repeat;
     background-position: right bottom;
     position: absolute;
@@ -40,111 +95,118 @@ img {
   .bird-box .back-bird {
     width: 960px;
     height: 298px;
-    background-image: url(../images/back-bird.png);
+    background-image: url(/images/back-bird.png);
     background-repeat: no-repeat;
     background-position: top left;
     position: absolute;
     left: 50%;
     margin-left: -480px; }
 
+.content .clothes-pics figure {
+  overflow: hidden;
+  position: relative;
+  opacity: 0;
+  transform: translateX(1.5em);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  width: 33%; }
+  .content .clothes-pics figure img {
+    display: block;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out; }
+  .content .clothes-pics figure.is-showing {
+    opacity: 1;
+    transform: translateX(0); }
+  .content .clothes-pics figure:hover figcaption {
+    left: 0; }
+  .content .clothes-pics figure:hover img {
+    transform: scale(1.2); }
+
+.content .clothes-pics figcaption {
+  background: black;
+  color: white;
+  position: absolute;
+  bottom: 0.8em;
+  left: -100%;
+  padding: 0.2em 0.6em;
+  font-size: 11px;
+  transition: all 0.3s ease-in-out; }
+
+.content .large-window {
+  display: flex;
+  margin: auto;
+  position: relative;
+  background-image: url(/images/model2.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border-radius: 100%; }
+  .content .large-window .window-tint {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 100%; }
+    .content .large-window .window-tint .promo-text {
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-size: 3em;
+      font-weight: 100;
+      opacity: 0; }
+      .content .large-window .window-tint .promo-text strong {
+        display: block;
+        font-size: 30px; }
+      .content .large-window .window-tint .promo-text span {
+        font-weight: 300;
+        font-size: 18px;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.6); }
+      .content .large-window .window-tint .promo-text .window-cta {
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+        border: 1px solid white;
+        padding: 5px 20px; }
+        .content .large-window .window-tint .promo-text .window-cta:hover {
+          background: white;
+          color: black;
+          transition: all 0.3s ease-in-out; }
+
+.content .blog-posts.page-content {
+  margin-top: 100px;
+  position: relative; }
+  .content .blog-posts.page-content .post {
+    padding: 0;
+    width: 33.3%; }
+  .content .blog-posts.page-content .post-1 {
+    transform: translate(-33.3%, 0); }
+  .content .blog-posts.page-content .post-2 {
+    z-index: 2; }
+  .content .blog-posts.page-content .post-3 {
+    transform: translate(33.3%, 0); }
+
+footer {
+  background: black;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 1em; }
+  footer a {
+    color: grey; }
+
 .content {
   position: relative;
   z-index: 2;
   background: white;
   margin-bottom: 400px; }
-  .content .clothes-pics {
-    margin-bottom: 200px; }
-    .content .clothes-pics figure {
-      overflow: hidden;
-      margin: 0.5em;
-      position: relative;
-      opacity: 0;
-      transform: translateX(20px);
-      transition: all 0.3s ease-in-out;
-      cursor: pointer; }
-      .content .clothes-pics figure img {
-        display: block;
-        transform: scale(1);
-        transition: all 0.3s ease-in-out; }
-      .content .clothes-pics figure.is-showing {
-        opacity: 1;
-        transform: translateX(0px); }
-      .content .clothes-pics figure:hover figcaption {
-        left: 0; }
-      .content .clothes-pics figure:hover img {
-        transform: scale(1.2); }
-    .content .clothes-pics figcaption {
-      background: black;
-      color: white;
-      position: absolute;
-      bottom: 10px;
-      left: -100%;
-      padding: 2px 8px;
-      font-size: 11px;
-      transition: all 0.3s ease-in-out; }
-  .content .large-window {
-    height: 640px;
-    width: 640px;
-    margin: auto;
-    position: relative;
-    background-image: url(../images/model2.jpg);
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    margin-top: 100px;
-    border-radius: 100%; }
-    .content .large-window .window-tint {
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 50%;
-      height: 640px;
-      width: 100%; }
-      .content .large-window .window-tint .promo-text {
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        text-align: center;
-        color: white;
-        font-size: 50px;
-        font-weight: 100;
-        margin-top: -70px;
-        opacity: 0; }
-        .content .large-window .window-tint .promo-text strong {
-          display: block;
-          font-size: 30px; }
-        .content .large-window .window-tint .promo-text span {
-          font-weight: 300;
-          font-size: 18px;
-          font-style: italic;
-          color: rgba(255, 255, 255, 0.6); }
-        .content .large-window .window-tint .promo-text .window-cta {
-          font-size: 20px;
-          text-decoration: none;
-          color: white;
-          border: 1px solid white;
-          padding: 5px 20px; }
-          .content .large-window .window-tint .promo-text .window-cta:hover {
-            background: white;
-            color: black;
-            transition: all 0.3s ease-in-out; }
-  .content .blog-posts {
-    margin-top: 100px;
-    position: relative; }
-    .content .blog-posts .post {
-      border: 1px solid #e1e1e1;
-      padding: 20px 20px 0; }
-    .content .blog-posts .post-1 {
-      transform: translate(-100px, 20px); }
-    .content .blog-posts .post-2 {
-      z-index: 2; }
-    .content .blog-posts .post-3 {
-      transform: translate(-100px, 20px); }
 
-footer {
-  background: black;
-  color: white;
-  padding: 40px;
-  position: fixed;
-  bottom: 0;
-  width: 100%; }
-  footer a {
-    color: white; }
+.page-content {
+  width: 960px;
+  margin: 0 auto; }
+
+@media all and (max-width: 600px) {
+  .page-content {
+    width: 100%; } }
