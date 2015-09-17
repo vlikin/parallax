@@ -102,35 +102,43 @@ a {
     left: 50%;
     margin-left: -480px; }
 
-.content .clothes-pics figure {
-  overflow: hidden;
-  position: relative;
-  opacity: 0;
-  transform: translateX(1.5em);
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  width: 33%; }
-  .content .clothes-pics figure img {
-    display: block;
-    transform: scale(1);
+.content .clothes-pics {
+  display: flex;
+  flex-flow: row wrap; }
+  .content .clothes-pics figure {
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    transform: translateX(1.5em);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    width: 33%; }
+    @media all and (min-width: 601px) and (max-width: 959px) {
+      .content .clothes-pics figure {
+        width: 50%; } }
+    @media all and (max-width: 600px) {
+      .content .clothes-pics figure {
+        width: 100%; } }
+    .content .clothes-pics figure img {
+      display: block;
+      transform: scale(1);
+      transition: all 0.3s ease-in-out; }
+    .content .clothes-pics figure.is-showing {
+      opacity: 1;
+      transform: translateX(0); }
+    .content .clothes-pics figure:hover figcaption {
+      left: 0; }
+    .content .clothes-pics figure:hover img {
+      transform: scale(1.2); }
+  .content .clothes-pics figcaption {
+    background: black;
+    color: white;
+    position: absolute;
+    bottom: 0.8em;
+    left: -100%;
+    padding: 0.2em 0.6em;
+    font-size: 11px;
     transition: all 0.3s ease-in-out; }
-  .content .clothes-pics figure.is-showing {
-    opacity: 1;
-    transform: translateX(0); }
-  .content .clothes-pics figure:hover figcaption {
-    left: 0; }
-  .content .clothes-pics figure:hover img {
-    transform: scale(1.2); }
-
-.content .clothes-pics figcaption {
-  background: black;
-  color: white;
-  position: absolute;
-  bottom: 0.8em;
-  left: -100%;
-  padding: 0.2em 0.6em;
-  font-size: 11px;
-  transition: all 0.3s ease-in-out; }
 
 .content .large-window {
   display: flex;
@@ -176,10 +184,18 @@ a {
 
 .content .blog-posts.page-content {
   margin-top: 100px;
-  position: relative; }
+  position: relative;
+  display: flex;
+  flex-flow: row wrap; }
+  @media all and (max-width: 600px) {
+    .content .blog-posts.page-content {
+      flex-flow: column no-wrap; } }
   .content .blog-posts.page-content .post {
     padding: 0;
     width: 33.3%; }
+    @media all and (max-width: 600px) {
+      .content .blog-posts.page-content .post {
+        width: 100%; } }
   .content .blog-posts.page-content .post-1 {
     transform: translate(-33.3%, 0); }
   .content .blog-posts.page-content .post-2 {
@@ -207,6 +223,10 @@ footer {
   width: 960px;
   margin: 0 auto; }
 
-@media all and (max-width: 960px) {
+@media all and (min-width: 601px) and (max-width: 959px) {
+  .page-content {
+    width: 100%; } }
+
+@media all and (max-width: 600px) {
   .page-content {
     width: 100%; } }

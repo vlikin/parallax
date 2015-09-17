@@ -1,5 +1,7 @@
 .content
   .clothes-pics
+    display: flex
+    flex-flow: row wrap
     figure
       overflow: hidden
       position: relative
@@ -8,6 +10,12 @@
       transition: all 0.3s ease-in-out
       cursor: pointer
       width: 33%
+
+      +tablet
+        width: 50%
+
+      +cell
+        width: 100%
 
       img
         display: block

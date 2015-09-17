@@ -2,10 +2,18 @@
   .blog-posts.page-content
     margin-top: 100px
     position: relative
+    display: flex
+    flex-flow: row wrap
+
+    +cell
+      flex-flow: column no-wrap
 
     .post
       padding: 0
       width: 33.3%
+
+      +cell
+        width: 100%
 
     .post-1
       transform: translate(-33.3%, 0)
