@@ -1,0 +1,36 @@
+.content
+  .clothes-pics
+    figure
+      overflow: hidden
+      position: relative
+      opacity: 0
+      transform: translateX(1.5em)
+      transition: all 0.3s ease-in-out
+      cursor: pointer
+      width: 33%
+
+      img
+        display: block
+        transform: scale(1)
+        transition: all 0.3s ease-in-out
+
+      &.is-showing
+        opacity: 1
+        transform: translateX(0)
+
+      &:hover
+        figcaption
+          left: 0
+
+        img
+          transform: scale(1.2)
+
+    figcaption
+      background: black
+      color: white
+      position: absolute
+      bottom: 0.8em;
+      left: -100%;
+      padding: 0.2em 0.6em
+      font-size: 11px
+      transition: all 0.3s ease-in-out

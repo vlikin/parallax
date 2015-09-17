@@ -7,6 +7,13 @@ var app = angular.module('parallax/ui', [
   $scope.greeting = 'HI, Hello from Viktor.';
   $scope.scroll = 'not set';
 
+  angular.element(document).ready(function () {
+    angular.element('.height-as-width').each(function(index, object) {
+      var el = angular.element(object);
+      el.height(el.width());
+    });
+  });
+
   angular.element($window).bind("scroll",
     function() {
       $scope.scroll = this.pageYOffset;
@@ -24,6 +31,7 @@ var app = angular.module('parallax/ui', [
         // Clothes pics.
         var clothes_block = angular.element('.clothes-pics');
         var window = angular.element($window);
+        var wScrollEnd = wScroll + window.height();
         if (wScroll > clothes_block.offset().top - (window.height() / 1.2)) {
           clothes_block.find('figure').each(function(index, value) {
               var el = angular.element(value);
@@ -47,14 +55,30 @@ var app = angular.module('parallax/ui', [
         }
 
         var blog_posts = angular.element('.blog-posts');
+        var once_out = false;
         var post_1 = blog_posts.find('.post-1');
         var post_2 = blog_posts.find('.post-2');
         var post_3 = blog_posts.find('.post-3');
-        if (wScroll > blog_posts.offset().top - window.height()) {
-          var offset = wScroll - blog_posts.offset().top + window.height() - 200;
-          offset = Math.abs(offset);
-          post_1.css('transform', 'translate(' + offset + 'px, 20px)')
-          post_3.css('transform', 'translate(' + -offset + 'px, 20px)')
+        if (
+          wScrollEnd >= blog_posts.offset().top
+          && wScrollEnd <= blog_posts.offset().top + blog_posts.height()
+        ) {
+          once_out = false;
+          var s = (wScrollEnd - blog_posts.offset().top) / blog_posts.height();
+          console.log(wScrollEnd);
+          var ms = 1 - s;
+          var shift_str = 'translate(-' + (ms * 33.3) + '%, 0)';
+          console.log(shift_str);
+          post_1.css('transform', shift_str);
+          var shift_str = 'translate(' + (ms * 33.3) + '%, 0)';
+          post_3.css('transform', shift_str);
+        }
+        else {
+          if (!once_out && wScrollEnd > blog_posts.offset().top + blog_posts.height()) {
+              post_1.css('transform', 'translate(0, 0)');
+              post_3.css('transform', 'translate(0, 0)');
+              once_out = true;
+          }
         }
     }
   );
