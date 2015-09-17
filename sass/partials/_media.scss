@@ -3,3 +3,13 @@
     @content;
   }
 }
+
+@mixin tablet {
+  @media all and (min-width: 601px) and (max-width: 959px) {
+    @content;
+  }
+}
+
+@function grid($value){
+  @return percentage($value / 960);
+}
